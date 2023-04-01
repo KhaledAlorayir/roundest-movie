@@ -6,12 +6,19 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "postgresql"
     url      = env("DATABASE_URL")
 }
 
-model Example {
-    id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model Movie {
+    id         String   @id
+    title      String
+    image      String
+    thumbnail  String
+    year       Int
+    votes      Int      @default(0)
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    @@map("movies")
 }
