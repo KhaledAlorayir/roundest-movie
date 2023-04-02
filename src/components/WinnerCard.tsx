@@ -17,7 +17,11 @@ const WinnerCard = ({ winner }: Props) => {
           </span>
         </h3>
         <div className="mx-auto max-w-sm overflow-hidden rounded">
-          <img src={winner.image} className="h-full w-full" />
+          <img
+            src={winner.image}
+            alt={winner.title}
+            className="h-full w-full"
+          />
         </div>
       </div>
     </div>

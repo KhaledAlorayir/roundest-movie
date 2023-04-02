@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const movies = await prisma.movie.findMany();
   return {
     props: {
-      movies: JSON.parse(JSON.stringify(movies.slice(0, 10))) as Movie[],
+      movies: JSON.parse(JSON.stringify(movies)) as Movie[],
     },
   };
 };
@@ -26,12 +26,6 @@ const Home: NextPage<Props> = ({ movies }) => {
   const [availableMovies, setAvailableMovies] = useState(movies);
   const [winner, setWinner] = useState<Movie>();
   const { mutate: vote } = api.movies.vote.useMutation();
-
-  /*
-    1- transfer state into useRedcuer
-    2- next image
-    3- results page (ssg)
-  */
 
   function chooseHandler(chosen: Movie) {
     if (availableMovies.length === 2) {

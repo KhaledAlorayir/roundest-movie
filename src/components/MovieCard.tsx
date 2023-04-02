@@ -9,7 +9,7 @@ const MovieCard = ({ movie, handler }: Props) => {
   return (
     <div className="flex-1 text-center">
       <div className="mx-auto mb-2 w-1/2 max-w-lg overflow-hidden rounded">
-        <img src={movie.image} className="h-full w-full" />
+        <img src={movie.image} alt={movie.title} className="h-full w-full" />
       </div>
       <h3 className="mb-4 text-lg font-semibold">
         {movie.title}{" "}

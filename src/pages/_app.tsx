@@ -15,7 +15,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <Component {...pageProps} />
       </section>
       <footer className="text-center font-extrabold underline">
-        <Link href="/">Results</Link>
+        <Link href="/results">Results</Link>
       </footer>
     </main>
   );
